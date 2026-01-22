@@ -1,5 +1,91 @@
-# Vue 3 + Vite
+# Raffle Studio - 安全、离线、多主题抽奖平台
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Raffle Studio 是一个基于 Vue 3 + Vite 开发的现代化网页端抽奖应用。它专为年会、品牌活动、发布会等场景设计，主打**数据隐私安全**（纯本地运行）与**极致的视觉体验**（多主题一键切换）。
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## ✨ 核心特性
+
+- **🔒 零网络请求**：所有数据（人员、奖品、中奖记录）仅保存在浏览器 LocalStorage 中，全程无网络交互，最大程度保障数据隐私安全。
+- **📂 全能导入导出**：
+  - 支持 **Excel (.xlsx, .xls)**、**CSV**、**JSON** 格式文件导入。
+  - 智能识别表头（姓名/Name、部门/Group、工号/ID 等）。
+  - 支持一键导出中奖名单和原始数据。
+- **🎨 8 套精美主题**：
+  - 内置 AI 前沿实验室、潮流消费志、创意工坊、未来探索站等 8 种风格。
+  - 基于 CSS Variables 实现，切换主题即刻生效，无需刷新。
+- **⚡️ 丝滑抽奖体验**：
+  - 支持批量抽取（一次抽多人）。
+  - 沉浸式滚动动画与音效反馈。
+  - 自动去重逻辑，确保同一人不会重复中奖。
+- **📱 响应式设计**：适配大屏投影与桌面端操作，后台配置与前台展示分离。
+
+## 🚀 快速开始
+
+### 环境要求
+- Node.js 16.0 或更高版本
+
+### 安装与运行
+
+1. **克隆/下载项目**
+   ```bash
+   git clone <repository-url>
+   cd Raffle
+   ```
+
+2. **安装依赖**
+   ```bash
+   npm install
+   ```
+
+3. **启动开发服务器**
+   ```bash
+   npm run dev
+   ```
+   启动后访问终端显示的本地链接（通常是 `http://localhost:5173`）。
+
+4. **构建生产版本**
+   ```bash
+   npm run build
+   ```
+
+## 📖 使用指南
+
+### 1. 准备数据
+在进入抽奖前，请点击首页的 **"进入后台配置"** 或右上角的设置图标。
+
+- **导入人员**：上传包含人员名单的 Excel 或 CSV 文件。
+  - *推荐表头*：`姓名`、`部门`、`工号`。
+  - 系统提供**去重功能**，可自动合并重复人员。
+- **配置奖品**：手动添加或批量导入奖品信息。
+
+### 2. 进行抽奖
+点击 **"立即进入大屏"** 切换至抽奖视图。
+
+1. **选择奖品**：在左侧列表中点击要抽取的奖品。
+2. **设置数量**：在底部控制栏输入本次抽取的人数（如一次抽 5 人）。
+3. **开始/停止**：点击“开始抽奖”按钮，系统将随机滚动名单，再次点击或等待动画结束即可生成中奖名单。
+
+### 3. 结果管理
+- 中奖结果会实时显示在大屏底部（最新 12 条）。
+- 所有历史中奖记录可在后台查看，并支持导出为 Excel 用于核对发奖。
+
+## 🛠 技术栈
+
+- **前端框架**: [Vue 3](https://vuejs.org/) (Composition API)
+- **构建工具**: [Vite](https://vitejs.dev/)
+- **数据处理**: [SheetJS (xlsx)](https://docs.sheetjs.com/) - 用于 Excel 文件解析与生成
+- **样式方案**: Native CSS + CSS Variables (Theme System)
+
+## 📂 目录结构
+
+```
+src/
+├── assets/          # 静态资源文件
+├── components/      # Vue 组件
+├── App.vue          # 核心应用逻辑（包含路由、状态管理、所有业务逻辑）
+├── style.css        # 全局样式、动画定义及主题色配置
+└── main.js          # 应用入口
+```
+
+## 📄 License
+
+MIT License
