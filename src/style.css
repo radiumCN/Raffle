@@ -12,16 +12,35 @@
   --accent-strong: #0ea5e9;
   --card: rgba(30, 41, 59, 0.7);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  
+  /* Layout & Shape Defaults */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --border-width: 1px;
+  --shadow-glow: none;
+  --backdrop-blur: none;
 }
 
 [data-theme='ai-lab'] {
   --bg: #0b1026;
-  --panel: #1b2a55;
+  --panel: rgba(27, 42, 85, 0.8);
   --border: #2d3f75;
   --text-primary: #f0f4ff;
   --text-secondary: #cbd5e1;
   --accent: #6cf7ff;
   --accent-strong: #00c2ff;
+  
+  /* Tech / Sharp Style */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --shadow: 0 0 20px rgba(108, 247, 255, 0.1);
+  --shadow-glow: 0 0 15px rgba(108, 247, 255, 0.2);
+  --backdrop-blur: blur(12px);
+  --border-width: 1px;
 }
 
 [data-theme='trend-consumer'] {
@@ -34,6 +53,14 @@
   --accent-strong: #e11d48;
   --text-muted: #be123c;
   --card: rgba(255, 255, 255, 0.8);
+  
+  /* Pop / Round Style */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-xl: 40px;
+  --shadow: 4px 4px 0 rgba(251, 113, 133, 0.2);
+  --border-width: 2px;
 }
 
 [data-theme='creative-studio'] {
@@ -46,16 +73,32 @@
   --accent-strong: #2563eb;
   --text-muted: #64748b;
   --card: rgba(255, 255, 255, 0.8);
+  
+  /* Playful / Sketch Style */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow: 2px 2px 0 #1e293b;
+  --border-width: 2px;
 }
 
 [data-theme='future-explorer'] {
   --bg: #0f172a;
-  --panel: #1e293b;
+  --panel: rgba(30, 41, 59, 0.9);
   --border: #334155;
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --accent: #38bdf8;
   --accent-strong: #0ea5e9;
+  
+  /* Minimal / Sci-Fi */
+  --radius-sm: 0px;
+  --radius-md: 2px;
+  --radius-lg: 4px;
+  --radius-xl: 8px;
+  --shadow: none;
+  --border-width: 1px;
 }
 
 [data-theme='energy-life'] {
@@ -68,6 +111,13 @@
   --accent-strong: #16a34a;
   --text-muted: #3f6212;
   --card: rgba(255, 255, 255, 0.8);
+  
+  /* Organic / Soft */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.2);
 }
 
 [data-theme='market-radar'] {
@@ -80,6 +130,13 @@
   --accent-strong: #1d4ed8;
   --text-muted: #1e3a8a;
   --card: rgba(255, 255, 255, 0.8);
+  
+  /* Professional / Clean */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 [data-theme='culture-next'] {
@@ -92,6 +149,13 @@
   --accent-strong: #ea580c;
   --text-muted: #9a3412;
   --card: rgba(255, 255, 255, 0.8);
+  
+  /* Fusion / Dynamic */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow: 0 4px 20px -5px rgba(249, 115, 22, 0.15);
 }
 
 [data-theme='happy-community'] {
@@ -104,6 +168,14 @@
   --accent-strong: #eab308;
   --text-muted: #991b1b;
   --card: rgba(255, 255, 255, 0.8);
+  
+  /* Warm / Friendly Style */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --shadow: 0 8px 20px -5px rgba(250, 204, 21, 0.1);
+  --border-width: 2px;
 }
 
 * {
@@ -129,7 +201,7 @@ body {
 
 .topbar {
   height: 72px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: var(--border-width) solid var(--border);
   background: var(--panel);
   display: flex;
   justify-content: center;
@@ -179,7 +251,7 @@ body {
   background: var(--bg);
   padding: 4px;
   border-radius: 99px;
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
 }
 
 .nav-button {
@@ -265,7 +337,7 @@ button.primary {
   color: #0f172a;
   border: none;
   padding: 12px 32px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
@@ -281,9 +353,9 @@ button.primary:hover {
 button.ghost {
   background: transparent;
   color: var(--text-primary);
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   padding: 12px 32px;
-  border-radius: 12px;
+  border-radius: var(--radius-md);
   font-weight: 500;
   font-size: 16px;
   cursor: pointer;
@@ -298,13 +370,14 @@ button.ghost:hover {
 
 .hero-card {
   background: var(--panel);
-  border-radius: 32px;
+  border-radius: var(--radius-xl);
   padding: 40px;
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   box-shadow: var(--shadow);
+  backdrop-filter: var(--backdrop-blur);
 }
 
 .stat {
@@ -345,8 +418,8 @@ button.ghost:hover {
 .feature-card {
   background: var(--card);
   padding: 32px;
-  border-radius: 24px;
-  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border);
 }
 
 .feature-card h3 {
@@ -368,9 +441,9 @@ button.ghost:hover {
 
 .theme-card {
   background: var(--panel);
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -380,7 +453,7 @@ button.ghost:hover {
 .theme-swatch {
   display: flex;
   height: 40px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
@@ -408,8 +481,8 @@ button.ghost:hover {
 
 .panel {
   background: var(--panel);
-  border-radius: 24px;
-  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  border: var(--border-width) solid var(--border);
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -440,9 +513,9 @@ button.ghost:hover {
 .form-row input {
   flex: 1;
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   color: var(--text-primary);
   outline: none;
 }
@@ -469,9 +542,9 @@ button.ghost:hover {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   background: var(--card);
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   color: var(--text-primary);
   font-size: 14px;
   font-weight: 500;
@@ -525,11 +598,11 @@ button.ghost:hover {
 .list-item {
   background: var(--bg);
   padding: 12px 16px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
 }
 
 .list-item strong {
@@ -674,8 +747,8 @@ button.ghost:hover {
   align-items: center;
   background: var(--panel);
   padding: 12px 24px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--border);
 }
 
 .stat-num {
@@ -710,8 +783,8 @@ button.ghost:hover {
 .prize-card {
   background: var(--panel);
   padding: 16px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--border);
   cursor: pointer;
   transition: all 0.2s;
   display: flex;
@@ -753,13 +826,14 @@ button.ghost:hover {
 .draw-area {
   flex: 1;
   background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 32px;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-xl);
   position: relative;
   box-shadow: var(--shadow);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  backdrop-filter: var(--backdrop-blur);
 }
 
 .draw-content {
@@ -826,12 +900,12 @@ button.ghost:hover {
 
 .batch-winner-card {
   background: var(--bg);
-  border: 1px solid var(--accent);
-  border-radius: 12px;
+  border: var(--border-width) solid var(--accent);
+  border-radius: var(--radius-sm);
   padding: 12px 20px;
   min-width: 140px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-glow);
   animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
 }
 
@@ -883,9 +957,9 @@ button.ghost:hover {
   padding: 14px;
   text-align: center;
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
   color: var(--text-primary);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   outline: none;
   transition: border-color 0.2s;
 }
@@ -898,7 +972,7 @@ button.ghost:hover {
   flex: 2;
   font-size: 20px;
   padding: 16px;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   background: var(--accent);
   color: #0f172a;
   border: none;
@@ -921,9 +995,9 @@ button.ghost:hover {
 
 .screen-winners {
   background: var(--panel);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 24px;
-  border: 1px solid var(--border);
+  border: var(--border-width) solid var(--border);
 }
 
 .screen-winners h3 {
@@ -1000,8 +1074,8 @@ button.ghost:hover {
 
 .admin-modal-content {
   background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 24px;
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-lg);
   width: 100%;
   max-width: 1200px;
   max-height: 90vh;
