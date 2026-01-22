@@ -707,7 +707,7 @@ onMounted(() => {
            </button>
         </div>
         <div class="screen-container">
-          <div class="screen-header">
+          <header class="screen-header">
             <h1 class="screen-title">Raffle Studio 抽奖现场</h1>
             <div class="screen-stats">
               <div class="stat-item">
@@ -719,9 +719,9 @@ onMounted(() => {
                 <span class="stat-desc">剩余奖品</span>
               </div>
             </div>
-          </div>
+          </header>
           
-          <div class="screen-main">
+          <main class="screen-main">
              <div class="prize-selector">
                 <div 
                   v-for="prize in prizeStats" 
