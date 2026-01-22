@@ -762,9 +762,9 @@ onMounted(() => {
                    </div>
                 </div>
              </div>
-          </div>
+          </main>
           
-          <div class="screen-winners" :style="{ visibility: winners.length > 0 ? 'visible' : 'hidden' }">
+          <aside class="screen-winners" :style="{ visibility: winners.length > 0 ? 'visible' : 'hidden' }">
              <h3>最新中奖</h3>
              <div class="winner-ticker">
                 <div v-if="winners.length === 0" class="ticker-item">
@@ -776,7 +776,7 @@ onMounted(() => {
                    <span class="w-prize">{{ winner.prizeName }}</span>
                 </div>
              </div>
-          </div>
+          </aside>
         </div>
         
         <div v-if="isDrawing" class="draw-overlay">
