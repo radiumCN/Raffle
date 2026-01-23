@@ -51,6 +51,24 @@ const themeOptions = [
     style: '温馨、欢快、社区感',
     colors: ['#fef2f2', '#fecaca', '#fb7185', '#facc15'],
   },
+  {
+    id: 'festive-red',
+    name: '喜庆红火',
+    style: '热烈、传统、节日',
+    colors: ['#7f1d1d', '#991b1b', '#fcd34d', '#fef3c7'],
+  },
+  {
+    id: 'monotone-minimal',
+    name: '极简单调',
+    style: '黑白、高冷、无干扰',
+    colors: ['#ffffff', '#e5e5e5', '#171717', '#000000'],
+  },
+  {
+    id: 'european-classic',
+    name: '欧式典雅',
+    style: '复古、奢华、衬线体',
+    colors: ['#fdfbf7', '#d4c5b0', '#2c3e50', '#c5a059'],
+  },
 ]
 
 const viewOptions = [

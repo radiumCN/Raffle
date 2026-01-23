@@ -12,6 +12,8 @@
   --accent-strong: #0ea5e9;
   --card: rgba(30, 41, 59, 0.7);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --btn-text: #0f172a;
   
   /* Layout & Shape Defaults */
   --radius-sm: 8px;
@@ -178,6 +180,74 @@
   --border-width: 2px;
 }
 
+[data-theme='festive-red'] {
+  --bg: #7f1d1d;
+  --panel: rgba(153, 27, 27, 0.95);
+  --border: #b91c1c;
+  --text-primary: #fef3c7;
+  --text-secondary: #fde68a;
+  --text-muted: #fcd34d;
+  --accent: #fcd34d;
+  --accent-strong: #fbbf24;
+  --card: rgba(185, 28, 28, 0.8);
+  
+  /* Festive / Traditional Style */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-xl: 40px;
+  --shadow: 0 10px 30px -5px rgba(252, 211, 77, 0.2);
+  --shadow-glow: 0 0 20px rgba(252, 211, 77, 0.3);
+  --border-width: 2px;
+  --backdrop-blur: blur(4px);
+}
+
+[data-theme='monotone-minimal'] {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --border: #000000;
+  --text-primary: #000000;
+  --text-secondary: #171717;
+  --text-muted: #404040;
+  --accent: #000000;
+  --accent-strong: #262626;
+  --card: #ffffff;
+  --btn-text: #ffffff;
+  
+  /* Minimal / Sharp Style */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --shadow: 4px 4px 0px 0px #000000;
+  --shadow-glow: none;
+  --border-width: 2px;
+  --backdrop-blur: none;
+}
+
+[data-theme='european-classic'] {
+  --bg: #fdfbf7;
+  --panel: #ffffff;
+  --border: #d4c5b0;
+  --text-primary: #2c3e50;
+  --text-secondary: #4a5d70;
+  --text-muted: #8b7e66;
+  --accent: #c5a059;
+  --accent-strong: #b08d55;
+  --card: rgba(255, 255, 255, 0.9);
+  --font-family: 'Times New Roman', 'Georgia', serif;
+  
+  /* Classic / Elegant Style */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
+  --shadow-glow: 0 0 15px rgba(197, 160, 89, 0.2);
+  --border-width: 1px;
+  --backdrop-blur: blur(2px);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -185,7 +255,7 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-family);
   background-color: var(--bg);
   color: var(--text-primary);
   line-height: 1.6;
@@ -339,7 +409,7 @@ body {
 
 button.primary {
   background: var(--accent);
-  color: #0f172a;
+  color: var(--btn-text);
   border: none;
   padding: 12px 32px;
   border-radius: var(--radius-md);
@@ -808,12 +878,13 @@ button.ghost:hover {
 
 .prize-card.active {
   background: var(--accent);
-  color: #0f172a;
+  color: var(--btn-text);
   border-color: var(--accent);
 }
 
 .prize-card.active .prize-count {
-  color: rgba(15, 23, 42, 0.7);
+  color: var(--btn-text);
+  opacity: 0.7;
 }
 
 .prize-card.disabled {
@@ -983,7 +1054,7 @@ button.ghost:hover {
   padding: 16px;
   border-radius: var(--radius-md);
   background: var(--accent);
-  color: #0f172a;
+  color: var(--btn-text);
   border: none;
   font-weight: 700;
   cursor: pointer;
