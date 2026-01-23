@@ -292,6 +292,11 @@ body {
   outline: none;
 }
 
+.theme-switch select option {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
 .content {
   flex: 1;
   padding: 40px;
